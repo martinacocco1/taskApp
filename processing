@@ -1,9 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Task managemen - Backbone - RequireJs - Antonio Pierro</title>
+	<title>Task managemen - Backbone - RequireJs - MartinaCocco</title>
 	<link rel="stylesheet" href="css/todos.css">
-	<script data-main="js/main" src="js/libs/require/require.js"></script>
+	<script data-main="js/main" src="js/libs/require/require.js"> 
+float planetAngle = 0;
+
+void setup() {
+  size(300, 270);
+}
+
+void draw() {
+  background(0);
+  
+   // disegno della traiettoria-ellisse del pianeta
+ fill(0, 0, 0, 100);  
+ stroke(255);
+ ellipse(150, 130, 200, 210);
+
+  // disegno del sole al centro 
+  translate(width/2, height/2);
+  fill(250, 236, 164);
+  ellipse(0, 0, 70, 70);
+  
+  // pianeta che gira attorno al sole
+  pushMatrix();
+  rotate(planetAngle); 
+  translate(100, 0);
+  fill(215, 236, 237);
+  ellipse(0, 0, 20, 20);
+
+  popMatrix();
+
+  planetAngle += 0.01;
+}
+</script>
 </head>
 <body>
 
